@@ -22,6 +22,24 @@ const _ = {
    words(str){
        const new_array = str.split(' ')
        return new_array
+   },
+
+   pad(str, length){
+       if(length <= str.length){
+           return str
+       }
+       const startPaddingLength = Math.floor((length - str.length) / 2)
+       const endPaddingLength = length - str.length - startPaddingLength
+       const paddedString =' '.repeat(startPaddingLength) + str + ' '.repeat(endPaddingLength)
+        return paddedString
+   },
+
+   has(obj, key){
+       const hasValue = obj[key]
+       if(hasValue != undefined){
+           return true
+       }return false
+
    }
 };
 
